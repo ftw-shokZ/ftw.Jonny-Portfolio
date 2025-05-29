@@ -1,89 +1,25 @@
-/* Reset & Base */
-* {
+body {
     margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    background: #000;
   }
-  
-  html, body {
-    height: 100%;
-    width: 100%;
-    font-family: 'Segoe UI', sans-serif;
-    background-color: #000;
-  }
-  
-  /* Hero Section */
-  .hero {
+  .container {
     position: relative;
+    width: 100vw;
     height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #000; /* Fallback */
-    overflow: hidden;
+    background: url('images/bg.png') center center / cover no-repeat;
   }
-  
-  /* Panels (Boxes) */
   .panel {
-    width: 30%;
-    height: 80%;
-    margin: 0 1%;
-    background-size: cover;
-    background-position: center;
-    cursor: pointer;
-    transform: skewY(-5deg);
-    box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
-    transition: transform 0.3s ease, opacity 0.3s ease;
-    position: relative;
-    border-radius: 6px;
-  }
-  
-  .panel:hover {
-    transform: skewY(-5deg) scale(1.04);
-    opacity: 0.95;
-  }
-  
-  /* Text inside panel */
-  .panel-content {
     position: absolute;
-    bottom: 20px;
-    left: 20px;
-    color: white;
-    font-size: 1.4rem;
-    font-weight: bold;
-    text-shadow: 0 0 5px black;
-    transform: skewY(5deg); /* counter-skew for readable text */
+    top: 0;
+    width: 33.33%;
+    height: 100%;
+    cursor: pointer;
+    transition: background 0.3s;
   }
-  
-  /* Panel Backgrounds (customize paths) */
-  .about {
-    background-image: url('../img/about.png');
+  .panel:hover {
+    background: rgba(0, 0, 0, 0.3);
   }
+  #left { left: 0; }
+  #middle { left: 33.33%; }
+  #right { left: 66.66%; }
   
-  .newdawn {
-    background-image: url('imgages/main.png');
-  }
-  
-  .projects {
-    background-image: url('../img/projects.png');
-  }
-  
-  /* Responsive for Mobile */
-  @media (max-width: 768px) {
-    .hero {
-      flex-direction: column;
-      padding-top: 40px;
-    }
-  
-    .panel {
-      width: 80%;
-      height: 25%;
-      transform: skewY(0deg);
-      margin-bottom: 2rem;
-    }
-  
-    .panel-content {
-      transform: none;
-      font-size: 1.2rem;
-    }
-  }
