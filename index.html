@@ -1,38 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ftw.Jonny | Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>New Dawn Portfolio</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { height: 100%; width: 100%; font-family: sans-serif; background-color: #000; }
+
+    .hero {
+      position: relative;
+      height: 100vh;
+      background: url('images/bg.png') center center / cover no-repeat;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .panel {
+      width: 30%;
+      height: 80%;
+      margin: 0 1%;
+      background-size: cover;
+      background-position: center;
+      cursor: pointer;
+      transform: skewY(-5deg);
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+      transition: transform 0.3s ease, opacity 0.3s ease;
+      position: relative;
+    }
+
+    .panel:hover {
+      transform: skewY(-5deg) scale(1.05);
+      opacity: 0.95;
+    }
+
+    .panel-content {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      color: white;
+      font-size: 1.4rem;
+      text-shadow: 0 0 5px black;
+      transform: skewY(5deg); /* Reverse skew for text */
+    }
+
+    /* Specific backgrounds for each panel */
+    .about { background-image: url('assets/img/about.png'); }
+    .newdawn { background-image: url('assets/img/newdawn.png'); }
+    .projects { background-image: url('assets/img/projects.png'); }
+
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column;
+      }
+      .panel {
+        width: 80%;
+        height: 25%;
+        transform: skewY(0deg);
+      }
+      .panel-content {
+        transform: none;
+      }
+    }
+  </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container">
-            <a href="#" class="logo">
-                <img src="images/xlogo.png" alt="" class="logo-img">
-                Xer0
-            </a>
-            <ul class="nav-links">
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
 
-    <!-- Hero Section -->
-    <header class="hero">
-        <div class="hero-overlay"></div>
-        <div class="container scroll-animation">
-            <h1>Hi, I'm Xer0</h1>
-            <h2>Developer, Car Mechanic & Professional Entertainer (cap)</h2>
-            <p>Building digital solutions that make an impact(maybe)</p>
-        </div>
-    </header>
+<div class="hero">
+  <div class="panel about" onclick="location.href='about.html'">
+    <div class="panel-content">About Me</div>
+  </div>
+  <div class="panel newdawn" onclick="location.href='newdawn.html'">
+    <div class="panel-content">New Dawn Devblog</div>
+  </div>
+  <div class="panel projects" onclick="location.href='projects.html'">
+    <div class="panel-content">Other Projects</div>
+  </div>
+</div>
 
-    <script src="app.js"></script>
 </body>
 </html>
