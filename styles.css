@@ -101,7 +101,7 @@ body::before {
     align-items: center;
     text-align: center;
     background: linear-gradient(rgba(10, 10, 10, 0.7), rgba(10, 10, 10, 0.7)),
-                url('images/bg.jpg') center/cover fixed;
+                url('images/bg.png') center/cover fixed;
     color: var(--light-color);
     padding-top: 80px;
     overflow: hidden;
