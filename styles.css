@@ -12,7 +12,7 @@
     background-color: #000;
   }
   
-  /* Hero Section with bg.png */
+  /* Hero section with bg.png */
   .hero {
     position: relative;
     height: 100vh;
@@ -24,28 +24,39 @@
     overflow: hidden;
   }
   
-  /* Panel Buttons */
+  /* Base panel */
   .panel {
-    width: 30%;
     height: 80%;
+    width: 30%;
     margin: 0 1%;
     background-size: cover;
     background-position: center;
     cursor: pointer;
-    transform: skewY(-5deg);
     box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
     transition: transform 0.3s ease, opacity 0.3s ease;
     position: relative;
     border-radius: 8px;
   }
   
-  /* On Hover */
-  .panel:hover {
-    transform: skewY(-5deg) scale(1.04);
-    opacity: 0.95;
+  /* Different skew/transform per panel */
+  .about {
+    transform: perspective(800px) rotateY(10deg);
+    background-image: url('images/left.jpg');
+  }
+  .newdawn {
+    transform: scale(1.03);
+    background-image: url('images/main.png');
+  }
+  .projects {
+    transform: perspective(800px) rotateY(-10deg);
+    background-image: url('images/right.jpg');
   }
   
-  /* Text Content */
+  .panel:hover {
+    opacity: 0.9;
+    transform: scale(1.05) perspective(800px) rotateY(0deg);
+  }
+  
   .panel-content {
     position: absolute;
     bottom: 20px;
@@ -54,23 +65,8 @@
     font-size: 1.4rem;
     font-weight: bold;
     text-shadow: 0 0 5px black;
-    transform: skewY(5deg);
   }
   
-  /* Panel-specific images */
-  .about {
-    background-image: url('images/about.png');
-  }
-  
-  .newdawn {
-    background-image: url('images/main.png');
-  }
-  
-  .projects {
-    background-image: url('images/projects.png');
-  }
-  
-  /* Mobile */
   @media (max-width: 768px) {
     .hero {
       flex-direction: column;
@@ -80,13 +76,11 @@
     .panel {
       width: 80%;
       height: 25%;
-      transform: skewY(0deg);
       margin-bottom: 2rem;
+      transform: none !important;
     }
   
     .panel-content {
-      transform: none;
       font-size: 1.2rem;
     }
   }
-  
