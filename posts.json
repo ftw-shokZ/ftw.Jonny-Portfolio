@@ -1,5 +1,32 @@
 [
   {
+    "title": "OpenMP Migration & Deathlist Madness",
+    "date": "May 29th, 2025",
+    "headline": "Enums, Deathlists, and Debugspeare’s wrath the great OpenMP refactor begins.",
+    "desc": "We migrated to OpenMP and accidentally summoned the compiler demons. From TextDraw chaos to enum salvation, this update overhauled the deathlist, scoreboard, map timer, and dialog systems. A true saga of cleanup, crashes, and code poetry. ",
+    "image": "images/post-5.png",
+    "tags": ["Clanwar", "Deathlist", "OpenMP", "Migratio", "Debugspeare"],
+    "url": "posts/post-5.html"
+  },  
+  {
+    "title": "Clanwar System Modernization: Day Recap",
+    "date": "May 25th, 2025",
+    "headline": "New Dawn is now officially SHIT-FREE™ thanks to Debugspeare’s sacred touch.",
+    "desc": "May 25th brought a legendary purge: DisableShit() is gone, the logic is tight, and the system now runs on pure enum power. From HUD polish to underwater deaths, everything’s cleaner, smarter, and actually works.",
+    "image": "images/post-4.png",
+    "tags": ["Clanwar", "System", "Refactor", "Status"],
+    "url": "posts/post-4.html"
+  },      
+  {
+    "title": "🕊️ A New Dawn Beckons: Clanwar Scrolls Chapter II",
+    "date": "May 24th, 2025",
+    "headline": "The dawn deepens with a revamped Clanwar engine and a fully rewritten maploader, the battlefield has evolved.",
+    "desc": "Core systems rebuilt, victory logic reforged, and a new INI-driven world loader rises. Everything flows smoother, hits harder, and feels like New Dawn.",
+    "image": "images/post-3.png",
+    "tags": ["Clanwar", "System", "Scripting", "Update"],
+    "url": "posts/post-3.html"
+  },    
+  {
     "title": "🛠️ Clanwar System (Core + UI Overhaul)",
     "date": "May 23th, 2025",
     "headline": "A fully reengineered Clanwar experience from backend flow to visual control.",

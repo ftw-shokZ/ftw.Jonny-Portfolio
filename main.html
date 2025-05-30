@@ -10,65 +10,50 @@
       box-sizing: border-box;
     }
 
-    .mouse-light {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      pointer-events: none;
-      background: radial-gradient(
-        circle at var(--x, 50%) var(--y, 50%),
-        rgba(34, 165, 221, 0.3) 0%,
-        rgba(34, 165, 221, 0.2) 3%,
-        transparent 10%
-      );
-      z-index: 1;
-      mix-blend-mode: screen;
-    }
-
     body {
-    background: #0e0e0e url('images/bg.png') no-repeat center center;
-    background-size: cover;
-    font-family: 'Segoe UI', sans-serif;
-    color: white;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 110px 20px 40px;
+      background: #0e0e0e url('images/bg.png') no-repeat center center;
+      background-size: cover;
+      background-attachment: fixed;
+      font-family: 'Segoe UI', sans-serif;
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 110px 20px 40px;
+      overflow-x: hidden;
     }
 
     .navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 72px;
-    background: linear-gradient(to right, #0f0f0f, #122027);
-    display: flex;
-    align-items: center;
-    padding: 0 30px;
-    box-shadow: 0 0 12px rgba(0, 0, 0, 0.6);
-    z-index: 999;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 72px;
+      background: linear-gradient(to right, #0f0f0f, #122027);
+      display: flex;
+      align-items: center;
+      padding: 0 30px;
+      box-shadow: 0 0 12px rgba(0, 0, 0, 0.6);
+      z-index: 999;
     }
 
     .back-btn {
-    background-color: transparent;
-    color: #22a5dd;
-    border: 1px solid #22a5dd;
-    padding: 6px 14px;
-    border-radius: 6px;
-    font-weight: bold;
-    text-decoration: none;
-    margin-right: 20px;
-    transition: all 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+      background-color: transparent;
+      color: #22a5dd;
+      border: 1px solid #22a5dd;
+      padding: 6px 14px;
+      border-radius: 6px;
+      font-weight: bold;
+      text-decoration: none;
+      margin-right: 20px;
+      transition: all 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     }
 
     .back-btn:hover {
-    background-color: #22a5dd;
-    color: #000;
-    box-shadow: 0 0 12px rgba(34, 165, 221, 0.6);
+      background-color: #22a5dd;
+      color: #000;
+      box-shadow: 0 0 12px rgba(34, 165, 221, 0.6);
     }
 
     .title {
@@ -86,12 +71,27 @@
     }
 
     .project-card {
-      background: #161616;
-      border-radius: 12px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.6);
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    background: #161616;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.6);
+    display: flex;
+    flex-direction: column;
+    }
+
+    .project-light {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background: rgba(34, 165, 221, 0.2);
+    pointer-events: none;
+    filter: blur(80px);
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    z-index: 0;
     }
 
     .project-banner {
@@ -103,65 +103,64 @@
     .project-title {
       padding: 20px;
       border-bottom: 1px solid #222;
+      z-index: 1;
     }
 
     .project-title a {
-    color: #22A5DD;
-    font-weight:bold;
-    font-size: 20px;
-    text-decoration: none;
+      color: #22A5DD;
+      font-weight: bold;
+      font-size: 20px;
+      text-decoration: none;
     }
 
     .project-desc {
       padding: 0 20px 20px 20px;
       color: #ccc;
       font-size: 15px;
+      z-index: 1;
     }
 
     .progress-accent {
-    height: 4px;
-    background: linear-gradient(to right,
-    #22A5DD 0%,
-    #4F46E5 20%,
-    #7C3AED 40%,
-    #9333EA 60%,
-    #C084FC 80%,
-    #AEEBFF 100%
-    );
+      height: 4px;
+      background: linear-gradient(to right,
+        #22A5DD 0%, #4F46E5 20%, #7C3AED 40%, #9333EA 60%, #C084FC 80%, #AEEBFF 100%
+      );
     }
 
     .post-date {
-    font-size: 13px;
-    color: #888;
-    margin-top: 4px;
+      font-size: 13px;
+      color: #888;
+      margin-top: 4px;
     }
 
     .project-headline {
-    font-size: 16px;
-    color: #22a5dd;
-    font-weight: bold;
-    padding: 10px 20px 0 20px;
+      font-size: 16px;
+      color: #22a5dd;
+      font-weight: bold;
+      padding: 10px 20px 0 20px;
+      z-index: 1;
     }
 
     .post-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    padding: 10px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding: 10px 20px;
+      z-index: 1;
     }
 
     .post-tags span {
-    background: #22A5DD22;
-    color: #22A5DD;
-    padding: 4px 10px;
-    border-radius: 6px;
-    font-size: 12px;
-    font-weight: 500;
-    }    
+      background: #22A5DD22;
+      color: #22A5DD;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 500;
+    }
   </style>
 </head>
 <body>
-  <div class="mouse-light"></div>
+
   <!-- Top Navigation -->
   <div class="navbar">
     <a class="back-btn" href="index.html">Back</a>
@@ -173,18 +172,15 @@
 
   <!-- Load Posts -->
   <script>
-    const light = document.querySelector('.mouse-light');
-    document.addEventListener('mousemove', (e) => {
-      light.style.setProperty('--x', `${e.clientX}px`);
-      light.style.setProperty('--y', `${e.clientY}px`);
-    });    
     fetch("posts.json")
       .then(res => res.json())
       .then(posts => {
         const container = document.getElementById("post-container");
+
         posts.forEach(post => {
           const card = document.createElement("div");
           card.className = "project-card";
+
           card.innerHTML = `
             <div class="project-banner" style="background-image: url('${post.image}')"></div>
             <div class="project-title">
@@ -196,10 +192,31 @@
             ${post.tags ? `<div class="post-tags">${post.tags.map(tag => `<span>${tag}</span>`).join('')}</div>` : ''}
             <div class="progress-accent"></div>
           `;
+
+          // Mouse light effect inside each card
+          const light = document.createElement("div");
+          light.className = "project-light";
+          card.appendChild(light);
+
+          card.addEventListener("mousemove", e => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            light.style.left = `${x}px`;
+            light.style.top = `${y}px`;
+          });
+
+          card.addEventListener("mouseenter", () => {
+            light.style.opacity = "1";
+          });
+
+          card.addEventListener("mouseleave", () => {
+            light.style.opacity = "0";
+          });
+
           container.appendChild(card);
         });
       });
   </script>
-
 </body>
 </html>
