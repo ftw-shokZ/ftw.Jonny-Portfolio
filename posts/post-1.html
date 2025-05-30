@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>New Gamemode Released | New Dawn Dev Blog</title>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+    background: #0e0e0e url('../images/bg.png') no-repeat fixed center center;
+    background-size: cover;
+    font-family: 'Segoe UI', sans-serif;
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 110px 20px 40px;
+    }
+
+    .navbar {
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 72px;
+      background: linear-gradient(to right, #0f0f0f, #122027);
+      display: flex; align-items: center; padding: 0 30px;
+      box-shadow: 0 0 12px rgba(0, 0, 0, 0.6);
+      z-index: 999;
+    }
+
+    .back-btn {
+      background: transparent;
+      color: #22a5dd;
+      border: 1px solid #22a5dd;
+      padding: 6px 14px;
+      border-radius: 6px;
+      font-weight: bold;
+      text-decoration: none;
+      margin-right: 20px;
+      transition: all 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    }
+
+    .back-btn:hover {
+      background-color: #22a5dd;
+      color: #000;
+      box-shadow: 0 0 12px rgba(34, 165, 221, 0.6);
+    }
+
+    .title {
+      font-size: 20px;
+      font-weight: bold;
+      color: #ffffff;
+    }
+
+    .post-wrapper {
+      background: #161616;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+      overflow: hidden;
+      max-width: 900px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .post-banner {
+      background: url('../images/post-1.png') center center/cover no-repeat;
+      height: 280px;
+    }
+
+    .post-content {
+      padding: 20px;
+    }
+
+    #markdown-content h1, #markdown-content h2, #markdown-content h3 {
+      color: #22A5DD;
+      margin: 24px 0 10px;
+    }
+
+    #markdown-content p {
+      color: #ccc;
+      line-height: 1.6;
+      margin: 10px 0;
+    }
+
+    #markdown-content ul {
+      margin: 16px 0 16px 20px;
+    }
+
+    #markdown-content blockquote {
+      border-left: 3px solid #22A5DD;
+      padding-left: 16px;
+      margin: 16px 0;
+      font-style: italic;
+      color: #aaa;
+    }
+
+    #markdown-content img {
+      max-width: 100%;
+      margin: 12px 0;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    #markdown-content code {
+      background-color: #1e1e1e;
+      color: #22a5dd;
+      font-family: Consolas, monospace;
+      font-size: 14px;
+      padding: 2px 6px;
+      border-radius: 4px;
+      white-space: pre-wrap;
+    }
+
+    .progress-accent {
+      height: 4px;
+      background: linear-gradient(to right, #22a5dd, #8e44ad, #22a5dd, #8e44ad);
+    }
+
+    /* Image Modal */
+    #imgModal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      background: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(6px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #modalImg {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 12px;
+      box-shadow: 0 0 80px 15px rgba(34, 165, 221, 0.35);
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="navbar">
+    <a class="back-btn" href="../main.html">Back</a>
+    <h1 class="title">New Dawn Dev Blog</h1>
+  </div>
+
+  <div class="post-wrapper">
+    <div class="post-banner"></div>
+    <div class="post-content">
+      <div id="markdown-content">Loading post...</div>
+    </div>
+    <div class="progress-accent"></div>
+  </div>
+
+  <!-- Image Modal -->
+  <div id="imgModal">
+    <img id="modalImg" src="" alt="Zoomed">
+  </div>
+
+  <script>
+    fetch('../markdown/post-1.md')
+      .then(res => res.text())
+      .then(md => {
+        document.getElementById('markdown-content').innerHTML = marked.parse(md);
+
+        const modal = document.getElementById('imgModal');
+        const modalImg = document.getElementById('modalImg');
+
+        document.querySelectorAll('#markdown-content img').forEach(img => {
+          img.addEventListener('click', () => {
+            modalImg.src = img.src;
+            modal.style.display = 'flex';
+          });
+        });
+
+        window.addEventListener('keydown', e => {
+          if(e.key === 'Escape') modal.style.display = 'none';
+        });
+
+        modal.addEventListener('click', e => {
+          if(e.target === modal || e.target === modalImg) {
+            modal.style.display = 'none';
+          }
+        });
+      });
+  </script>
+</body>
+</html>

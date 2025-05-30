@@ -1,18 +1,20 @@
 [
   {
-    "title": "Test Post: Welcome to New Dawn",
-    "desc": "This is your first devlog post. You can update this anytime by editing posts.json or creating more entries.",
-    "image": "images/test-banner.jpg",
-    "date": "May 30, 2025",
-    "links": [
-      {
-        "text": "Read More",
-        "url": "#"
-      },
-      {
-        "text": "Get Started",
-        "url": "#"
-      }
-    ]
+    "title": "🛠️ Clanwar System (Core + UI Overhaul)",
+    "date": "May 23th, 2025",
+    "headline": "A fully reengineered Clanwar experience from backend flow to visual control.",
+    "desc": "New Dawn’s Clanwar system is rebuilt from the ground up with enum logic, dialog-based setup, and sleek UI. Faster, clearer, and fully controlled by /cw.",
+    "image": "images/post-2.png",
+    "tags": ["Clanwar", "System", "UI", "Scripting"],
+    "url": "posts/post-2.html"
+  },  
+  {
+    "title": "Thus Rises New Dawn: Clanwar Server v2.5 Unleashed",
+    "date": "May 22th, 2025",
+    "headline": "A rebuilt login system, poetic code, and the rise of v2.5",
+    "desc": "From immersive login screens to secure SHA512 password handling v2.5 marks a complete overhaul of the Clanwar experience with cinematic UI, better structure, and enhanced account logic.",
+    "image": "images/post-1.png",
+    "tags": ["Backend", "Login", "UI"],
+    "url": "posts/post-1.html"
   }
 ]
