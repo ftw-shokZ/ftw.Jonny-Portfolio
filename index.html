@@ -1,24 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>New Dawn Portfolio</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8">
+  <title>New Dawn Panels</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 100vh;
+      width: 100vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: url('images/bg.png') no-repeat center center;
+      background-size: cover;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .mouse-light {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      background: radial-gradient(
+        circle at var(--x, 50%) var(--y, 50%),
+        rgba(34, 165, 221, 0.3) 0%,
+        rgba(34, 165, 221, 0.2) 3%,
+        transparent 10%
+      );
+      z-index: 1;
+      mix-blend-mode: screen;
+    }
+
+    .panel-container {
+      display: flex;
+      gap: 0;
+      align-items: center;
+      justify-content: center;
+      z-index: 2;
+    }
+
+    .panel {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .panel img {
+      display: block;
+      height: auto;
+      width: auto;
+      max-height: 100%;
+      transition: transform 0.3s ease, filter 0.3s ease;
+      cursor: pointer;
+    }
+
+    .left img {
+      transform: translateY(-55px);
+      filter:
+        drop-shadow(0 8px 20px rgba(0, 0, 0, 0.6))
+        drop-shadow(0 0 12px rgba(255, 255, 255, 0.1));
+    }
+
+    .center img {
+      transform: translateY(0);
+      filter:
+        drop-shadow(0 8px 20px rgba(0, 0, 0, 0.6))
+        drop-shadow(0 0 12px rgba(255, 255, 255, 0.1));
+    }
+
+    .right img {
+      transform: translateY(10px);
+      filter:
+        drop-shadow(0 8px 20px rgba(0, 0, 0, 0.6))
+        drop-shadow(0 0 12px rgba(255, 255, 255, 0.1));
+    }
+
+    .left img:hover,
+    .center img:hover,
+    .right img:hover {
+      transform: scale(1.05) translateY(-5px);
+      filter:
+        drop-shadow(0 12px 30px rgba(0, 0, 0, 0.75))
+        drop-shadow(0 0 18px rgba(255, 255, 255, 0.2));
+    }
+  </style>
 </head>
 <body>
+  <!-- Mouse Light Glow -->
+  <div class="mouse-light"></div>
 
-<div class="hero">
-  <a href="about.html" class="panel-link">
-    <img src="images/left.jpg" alt="About Me" class="panel-img" />
-  </a>
-  <a href="newdawn.html" class="panel-link">
-    <img src="images/main.png" alt="New Dawn Devblog" class="panel-img" />
-  </a>
-  <a href="projects.html" class="panel-link">
-    <img src="images/right.jpg" alt="Other Projects" class="panel-img" />
-  </a>
-</div>
+  <!-- Main Panels -->
+  <div class="panel left">
+    <a href="https://example.com/left" target="_blank">
+      <img src="images/left.png" alt="left panel">
+    </a>
+  </div>
+  
+  <div class="panel center">
+    <a href="https://example.com/main" target="_blank">
+      <img src="images/main.png" alt="main panel">
+    </a>
+  </div>
+  
+  <div class="panel right">
+    <a href="https://example.com/right" target="_blank">
+      <img src="images/right.png" alt="right panel">
+    </a>
+  </div>
 
+  <!-- Mouse Light Script -->
+  <script>
+    const light = document.querySelector('.mouse-light');
+    document.addEventListener('mousemove', (e) => {
+      light.style.setProperty('--x', `${e.clientX}px`);
+      light.style.setProperty('--y', `${e.clientY}px`);
+    });
+  </script>
 </body>
 </html>
