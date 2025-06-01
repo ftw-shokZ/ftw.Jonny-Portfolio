@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Clanwar System (Core + UI Overhaul)</title>
+  <title>OpenMP Migration & Deathlist Madness</title>
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -64,7 +64,7 @@
     }
 
     .post-banner {
-      background: url('../images/post-4.png') center center/cover no-repeat;
+      background: url('../images/post-6.png') center center/cover no-repeat;
       height: 280px;
     }
 
@@ -164,7 +164,7 @@
   </div>
 
   <script>
-    fetch('../markdown/post-4.md')
+    fetch('../markdown/post-6.md')
       .then(res => res.text())
       .then(md => {
         document.getElementById('markdown-content').innerHTML = marked.parse(md);
