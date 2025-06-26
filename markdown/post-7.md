@@ -77,9 +77,7 @@ This is *your* New Dawn too.
 
 ## 💌 Sincerely,
 
-Your 3.0 Dev,  
-**ftw.Jonny**
-
-With support from Head Admin & chaos enabler,  
+Your 3.0 Devs<br>
+**ftw.Jonny**<br>
 **Xer0**
 
