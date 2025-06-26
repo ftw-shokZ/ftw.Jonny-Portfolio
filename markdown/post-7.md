@@ -35,7 +35,7 @@ But to keep that spark alive, we asked **you**, the community, to decide:
 > *Should we stick to New Dawn 2.0… or take a leap into something bold?*
 
 ### **The results are in:**
-- 🧱 *Stay to the roots – I prefer the current New Dawn*: **21%**
+- 🧱 *Stick to the roots – I prefer the current New Dawn*: **21%**
 - 🚀 *Dare to evolve – welcome the new, fresh and exciting*: **79%** ✅ *(your vote)*
 
 So here we are rebuilding, reworking, and reawakening **New Dawn 3.0**, because you asked for it.  
