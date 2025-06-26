@@ -1,9 +1,18 @@
 [
   {
+    "title": "🚀 Dev Update New Dawn 3.0 Awakens",
+    "date": "Jun 27th, 2025",
+    "headline": "🧨 From Clanwar Dreams to 3.0 Reality",
+    "desc": "A simple clanwar project gone rogue.<br>New Dawn 3.0 rises from the ashes of unreleased code, finally getting the launch it never had.",
+    "image": "images/post-7.png",
+    "tags": ["New Dawn 3.0", "Devlog", "OpenMP", "SA-MP", "Debugspeare"],
+    "url": "posts/post-7.html"
+  },      
+  {
     "title": "🛠️ Dev Update",
     "date": "Jun 1st, 2025",
     "headline": "One wrong number broke it all. We fixed it and made it better.",
-    "desc": "Spectating fixed, dialogs upgraded, new commands added. Debugspeare approved. ",
+    "desc": "Spectating fixed, dialogs upgraded, new commands added. Debugspeare approved.",
     "image": "images/post-6.png",
     "tags": ["Clanwar", "Spectating", "Bugfixes", "Commands", "Debugspeare"],
     "url": "posts/post-6.html"
